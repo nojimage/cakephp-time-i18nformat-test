@@ -50,7 +50,7 @@ Quick fix: Add the below code in your app's `config/bootstrap.php`,
 \Cake\I18n\Time::setJsonEncodeFormat("yyyy-MM-dd'T'HH':'mm':'ssZZZZZ");
 ```
 
-# 2. Add `$useI18nFormat` to `setJsonEncodeFormat`'s 2nd argument
+### 2. Add `$useI18nFormat` to `setJsonEncodeFormat`'s 2nd argument
 
 Is i18n format required for json encoding?
 
