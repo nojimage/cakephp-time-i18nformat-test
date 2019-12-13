@@ -1,0 +1,18 @@
+FROM centos:7
+
+RUN yum install -y  https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+    && yum install -y http://rpms.famillecollet.com/enterprise/remi-release-7.rpm \
+    && yum install -y git php72-php-cli php72-php-intl
+
+RUN ln -s /usr/bin/php72 /usr/bin/php
+
+RUN mkdir /data
+ADD ./data /data
+
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/bin --filename=composer \
+    && php -r "unlink('composer-setup.php');" \
+    && cd /data && composer install
+
+WORKDIR /data
+CMD [ "/usr/bin/php72", "/data/test.php" ]

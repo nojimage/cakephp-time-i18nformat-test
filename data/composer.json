@@ -1,0 +1,13 @@
+{
+    "name": "nojimage/cakephp-time-i18nformat-test",
+    "require": {
+        "ext-intl": "*",
+        "cakephp/i18n": "^3.8"
+    },
+    "authors": [
+        {
+            "name": "nojimage",
+            "email": "nojimage@gmail.com"
+        }
+    ]
+}

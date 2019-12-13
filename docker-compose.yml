@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+    icu50:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: 'no'
+        volumes:
+            - ./data/test.php:/data/test.php:ro
+            - ./data/performance.php:/data/performance.php:ro
+    remi:
+        build:
+            context: .
+            dockerfile: Dockerfile-remi
+        restart: 'no'
+        volumes:
+            - ./data/test.php:/data/test.php:ro
+            - ./data/performance.php:/data/performance.php:ro
